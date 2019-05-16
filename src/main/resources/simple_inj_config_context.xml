@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="simpleInjectionConfig" class="simple.injection.SimpleInjectionConfig"
+>
+</bean>
+
+<bean id="simpleSpel" 
+class="simple.injection.SimpleSpel"
+p:name="#{simpleInjectionConfig.name}"
+p:age="#{simpleInjectionConfig.age+1}"
+p:height="#{simpleInjectionConfig.height}"
+p:programmer="#{simpleInjectionConfig.programmer}"
+p:ageInSeconds="#{simpleInjectionConfig.ageInSeconds}"
+>
+</bean>
+</beans>
